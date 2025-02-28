@@ -1,0 +1,283 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    background-color: #ffffff;
+    color: #333333;
+}
+
+.navbar {
+    background-color: #f8f8f8;
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.navbar a {
+    color: #333333;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: #FF8225;
+}
+
+.landing-page {
+    min-height: 100vh;
+    padding: 2rem;
+    position: relative;
+}
+
+.carousel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.carousel-slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.carousel-slide.active {
+    opacity: 0.35;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero {
+    text-align: center;
+    padding: 4rem 2rem;
+}
+
+.hero h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(90deg, #FF8225, #B43F3F, #173B45);
+    background-size: 400% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: gradient 10s linear infinite;
+    text-shadow: 0 0 20px rgba(0, 255, 136, 0.3)
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    color: black;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.feature-box {
+    background-color: #F8EDED;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.feature-box:hover {
+    transform: translateY(-5px);
+}
+
+.feature-box h2 {
+    font-family: 'Montserrat', sans-serif;
+    color: #000000;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.city-page {
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+.city-intro {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.city-content {
+    background-color: #f8f8f8;
+    padding: 2rem;
+    border-radius: 8px;
+    margin-top: 2rem;
+}
+
+.grid-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.city-intro {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.city-intro h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    color: #000000;
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+}
+
+.city-content {
+    background-color: #f8f8f8;
+    padding: 2rem;
+    border-radius: 8px;
+    line-height: 1.8;
+}
+
+.city-content p {
+    color: #666666;
+    margin-bottom: 1.5rem;
+}
+
+.city-image {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.city-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+footer {
+    background-color: #f8f8f8;
+    color: #666666;
+    text-align: center;
+    padding: 1rem;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 0.5rem;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.8rem;
+        padding: 0.5rem 0;
+    }
+
+    .hero {
+        padding: 2rem 1rem;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+        padding: 0 1rem;
+    }
+
+    .features {
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    .feature-box {
+        padding: 1.5rem;
+    }
+
+    .city-page {
+        padding: 1rem;
+    }
+
+    .city-intro {
+        margin-bottom: 2rem;
+    }
+
+    .city-intro h1 {
+        font-size: 1.8rem;
+        padding: 0 1rem;
+    }
+
+    .city-content {
+        padding: 1.5rem;
+        margin-top: 1.5rem;
+    }
+
+    .city-content p {
+        font-size: 0.95rem;
+    }
+
+    .city-image {
+        margin-bottom: 1rem;
+    }
+
+    .city-image img {
+        height: 250px;
+    }
+
+    .grid-container {
+        padding: 0 1rem;
+    }
+}
